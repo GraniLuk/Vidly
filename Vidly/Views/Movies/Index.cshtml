@@ -1,4 +1,5 @@
-﻿@model Vidly.ViewModels.MoviesList
+﻿@using Vidly.Models
+@model Vidly.ViewModels.MoviesList
 
 @{
     ViewBag.Title = "Movies";
@@ -23,13 +24,18 @@ else
                 </tr>
             </thead>
             <tbody>
-                @foreach (var movie in Model.Movies)
+                    @foreach (var movie in Model.Movies)
                 {
-                    <tr>
-                        <td>@Html.ActionLink(@movie.Name, "Edit", "Movies", new { Id = movie.Id }, null)</td>
-                        <td>@movie.Genre.Name</td>
-                    </tr>
-                }
+                        <tr>
+                            <td>@Html.ActionLink(@movie.Name, "Edit", "Movies", new { Id = movie.Id }, null)</td>
+                            <td>@movie.Genre.Name</td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", new { id = movie.Id })
+                        </td>
+        </tr>
+              
+    }
+
             </tbody>
         </table>
     </div>

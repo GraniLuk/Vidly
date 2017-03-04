@@ -13,14 +13,17 @@
     <div class="form-group">
         @Html.LabelFor(x => x.Customer.Name)
         @Html.TextBoxFor(x => x.Customer.Name, new  { @class = "form-control"})
+        @Html.ValidationMessageFor(x => x.Customer.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Customer.Surname)
         @Html.TextBoxFor(x => x.Customer.Surname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Customer.Surname)
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Customer.Birthdate)
         @Html.TextBoxFor(x => x.Customer.Birthdate, "{0:d}", new {@class = "form-control"})
+        @Html.ValidationMessageFor(x => x.Customer.Birthdate)
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Customer.MembershipTypeId)
